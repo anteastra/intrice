@@ -41,11 +41,11 @@ public class Server {
 		Product p1 = new Product();
 		Product p2 = new Product();
         
-        //Проинициализируем их
+        
         p1.setName("iron");
         p2.setName("cotton");
         
-      //Сохраним их в бд, id будут сгенерированы автоматически
+      
         try {
 			Factory.getInstance().getProductDAO().addProduct(p1);
 			Factory.getInstance().getProductDAO().addProduct(p2); 
@@ -57,9 +57,9 @@ public class Server {
         List<Product> products;
 		try {
 			products = (List<Product>) Factory.getInstance().getProductDAO().getAllProducts();
-			System.out.println("========Все продукты=========");
+			System.out.println("========Products=========");
 	        for(int i = 0; i < products.size(); ++i) {
-	                System.out.println("Имя продукта : " + products.get(i).getName() + ",  id : " + products.get(i).getId());
+	                System.out.println("Name : " + products.get(i).getName() + ",  id : " + products.get(i).getId());
 	                System.out.println("=============================");              
 	        }  
 		} catch (SQLException e) {

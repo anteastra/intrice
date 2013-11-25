@@ -21,7 +21,7 @@ public class ProductDAOImpl implements ProductDAO {
                 session.save(product);
                 session.getTransaction().commit();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка I/O", JOptionPane.OK_OPTION);
+            	e.printStackTrace();                
             } finally {
                 if (session != null && session.isOpen()) {
                     session.close();
@@ -37,7 +37,7 @@ public class ProductDAOImpl implements ProductDAO {
                 session.update(product);
                 session.getTransaction().commit();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка I/O", JOptionPane.OK_OPTION);
+            	e.printStackTrace();  
             } finally {
                 if (session != null && session.isOpen()) {
                     session.close();
@@ -52,7 +52,7 @@ public class ProductDAOImpl implements ProductDAO {
                 session = HibernateUtil.getSessionFactory().openSession();
                 stud = (Product) session.load(Product.class, id);
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка I/O", JOptionPane.OK_OPTION);
+            	e.printStackTrace();  
             } finally {
                 if (session != null && session.isOpen()) {
                     session.close();
@@ -68,7 +68,7 @@ public class ProductDAOImpl implements ProductDAO {
                 session = HibernateUtil.getSessionFactory().openSession();
                 studs = session.createCriteria(Product.class).list();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка I/O", JOptionPane.OK_OPTION);
+            	e.printStackTrace();  
             } finally {
                 if (session != null && session.isOpen()) {
                     session.close();
@@ -85,7 +85,7 @@ public class ProductDAOImpl implements ProductDAO {
                 session.delete(product);
                 session.getTransaction().commit();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e.getMessage(), "Ошибка I/O", JOptionPane.OK_OPTION);
+            	e.printStackTrace();  
             } finally {
                 if (session != null && session.isOpen()) {
                     session.close();
